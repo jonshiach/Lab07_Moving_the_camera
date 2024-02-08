@@ -13,6 +13,9 @@
 #include "texture.hpp"
 #include "camera.hpp"
 
+// Create camera object
+Camera camera(glm::vec3(0.0f, 0.0f, 5.0f));
+
 int main( void )
 {
     // Initialise GLFW
@@ -229,9 +232,9 @@ int main( void )
                               );
         
         // Get the view and projection matrices from the camera library
-        pointCamera(window);
-        glm::mat4 view = getViewMatrix();
-        glm::mat4 projection = getProjectionMatrix();
+        camera.move(window, 0.0f);
+        glm::mat4 view = camera.getViewMatrix();
+        glm::mat4 projection = camera.getProjectionMatrix();
         
         // Send the view and projection matrices to the shader
         glUniformMatrix4fv(viewID, 1, GL_FALSE, &view[0][0]);

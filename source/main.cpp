@@ -210,29 +210,15 @@ int main( void )
         // Send the VBO to the shaders
         glEnableVertexAttribArray(0);
         glBindBuffer(GL_ARRAY_BUFFER, VBO);
-        glVertexAttribPointer(
-                              0,           // attribute
-                              3,           // size
-                              GL_FLOAT,    // type
-                              GL_FALSE,    // normalise
-                              0,           // stride
-                              (void*)0     // offset
-                              );
+        glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, (void*)0);
         
         // Send the uv buffer to the shaders
         glEnableVertexAttribArray(1);
         glBindBuffer(GL_ARRAY_BUFFER, uvBuffer);
-        glVertexAttribPointer(
-                              1,           // attribute
-                              2,           // size
-                              GL_FLOAT,    // type
-                              GL_FALSE,    // normalise
-                              0,           // stride
-                              (void*)0     // offset
-                              );
+        glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, (void*)0);
         
         // Get the view and projection matrices from the camera library
-        camera.move(window, 0.0f);
+        camera.calculateMatrices();
         glm::mat4 view = camera.getViewMatrix();
         glm::mat4 projection = camera.getProjectionMatrix();
         

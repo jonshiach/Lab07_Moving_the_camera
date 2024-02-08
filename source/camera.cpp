@@ -23,7 +23,7 @@ glm::mat4 Camera::getProjectionMatrix()
     return projection;
 }
 
-void Camera::move(GLFWwindow* window, const float deltaTime)
+void Camera::calculateMatrices()
 {
     // Calculate view matrix
     view = glm::lookAt(position, position + front, up);

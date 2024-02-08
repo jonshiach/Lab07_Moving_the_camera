@@ -28,5 +28,5 @@ public:
     // Methods
     glm::mat4 getViewMatrix();
     glm::mat4 getProjectionMatrix();
-    void move(GLFWwindow *window, const float deltaTime);
+    void calculateMatrices();
 };

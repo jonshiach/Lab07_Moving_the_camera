@@ -1,4 +1,4 @@
-# Lab 6 Moving the camera
+# Lab 7 Moving the camera
 
 ## Get the files
 

@@ -52,6 +52,9 @@ int main( void )
         return -1;
     }
 
+    // Enable depth test
+    glEnable(GL_DEPTH_TEST);
+    
     // Ensure we can capture the escape key being pressed below
     glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
     
@@ -177,9 +180,6 @@ int main( void )
     glGenBuffers(1, &elementBuffer);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, elementBuffer);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), &indices[0], GL_STATIC_DRAW);
-    
-    // Enable depth test
-    glEnable(GL_DEPTH_TEST);
     
     // Cube positions
     glm::vec3 cubePositions[] = {

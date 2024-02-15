@@ -11,6 +11,7 @@ Camera::Camera(const glm::vec3 Position)
     front = glm::vec3(0.0f, 0.0f, -1.0f);
     right = glm::vec3(1.0f, 0.0f, 0.0f);
     up = glm::vec3(0.0f, 1.0f, 0.0f);
+    worldUp = glm::vec3(0.0f, 1.0f, 0.0f);
 }
 
 glm::mat4 Camera::getViewMatrix()

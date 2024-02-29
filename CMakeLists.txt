@@ -53,6 +53,8 @@ add_executable(Lab07_Moving_the_camera
 	source/texture.cpp
 	source/camera.hpp
 	source/camera.cpp
+	source/vertexShader.vert
+	source/fragmentShader.frag
 )
 target_link_libraries(Lab07_Moving_the_camera
 	${ALL_LIBS}

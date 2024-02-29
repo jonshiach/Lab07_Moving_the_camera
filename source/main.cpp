@@ -82,10 +82,10 @@ int main( void )
     glUseProgram(shaderID);
     
     // Create OpenGL textures
-    GLuint texture1 = loadBMP_custom("crate.bmp");
+    GLuint texture = loadBMP_custom("crate.bmp");
     
     // Get the handles for the shader uniforms
-    GLuint texture1ID = glGetUniformLocation(shaderID, "texture1Sampler");
+    GLuint textureID = glGetUniformLocation(shaderID, "textureSampler");
     GLuint modelID = glGetUniformLocation(shaderID, "model");
     GLuint viewID = glGetUniformLocation(shaderID, "view");
     GLuint projectionID = glGetUniformLocation(shaderID, "projection");
@@ -224,8 +224,8 @@ int main( void )
         
         // Bind the textures
         glActiveTexture(GL_TEXTURE0);
-        glBindTexture(GL_TEXTURE_2D, texture1);
-        glUniform1i(texture1ID, 0);
+        glBindTexture(GL_TEXTURE_2D, texture);
+        glUniform1i(textureID, 0);
         
         // Send the vertex buffer to the shaders
         glEnableVertexAttribArray(0);

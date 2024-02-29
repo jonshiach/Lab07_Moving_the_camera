@@ -7,10 +7,10 @@ in vec2 uv;
 out vec3 colour;
 
 // Values that stay constant for the whole mesh
-uniform sampler2D texture1Sampler;
+uniform sampler2D textureSampler;
 
 void main ()
 {
     // Output colour = colour of the texture at (u, v)
-    colour = texture(texture1Sampler, uv).rgb;
+    colour = texture(textureSampler, uv).rgb;
 }

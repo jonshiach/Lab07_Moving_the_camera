@@ -14,6 +14,7 @@ public:
     
     // Camera vectors
     glm::vec3 position;
+    glm::vec3 target;
     glm::vec3 worldUp;
     
     // Transformation matrices

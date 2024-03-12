@@ -7,7 +7,7 @@
 #include <GLFW/glfw3.h>
 
 
-GLuint loadBMP_custom(const char * imagepath){
+GLuint loadBMP(const char * imagepath){
 
 	printf("Reading image %s\n", imagepath);
 

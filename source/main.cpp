@@ -16,12 +16,6 @@
 // Create camera object
 Camera camera(glm::vec3(0.0f, 0.0f, 5.0f));
 
-// Timers
-float currentFrame = 0.0f;
-float lastFrame = 0.0f;
-float deltaTime = 0.0f;
-float lastTime = 0.0f;
-
 int main( void )
 {
     // Initialise GLFW
@@ -61,17 +55,9 @@ int main( void )
     // Enable depth test
     glEnable(GL_DEPTH_TEST);
     
-    // Use back face culling
-    glEnable(GL_CULL_FACE);
-    
     // Ensure we can capture the escape key being pressed below
     glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
     
-    // Tell GLFW to capture our mouse
-    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
-    glfwPollEvents();
-    glfwSetCursorPos(window, 1024/2, 768/2);
-                     
     // Dark grey background
     glClearColor(0.2f, 0.2f, 0.2f, 0.0f);
     
@@ -82,7 +68,7 @@ int main( void )
     glUseProgram(shaderID);
     
     // Create OpenGL textures
-    GLuint texture = loadBMP_custom("crate.bmp");
+    GLuint texture = loadBMP("crate.bmp");
     
     // Get the handles for the shader uniforms
     GLuint textureID = glGetUniformLocation(shaderID, "textureSampler");
@@ -214,11 +200,6 @@ int main( void )
     };
     
     do {
-        // Update timers
-        currentFrame = glfwGetTime();
-        deltaTime = currentFrame - lastFrame;
-        lastFrame = currentFrame;
-        
         // Clear the window
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         
